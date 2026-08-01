@@ -1,0 +1,36 @@
+package mypackage.exp4;
+
+public class EmployeePayroll {
+
+    int empId;
+    double basicSalary;
+    double bonus;
+
+    EmployeePayroll(String id, String salary, String bonusAmount) {
+
+        // Converting String to Wrapper Objects
+        Integer emp = Integer.valueOf(id);
+        Double sal = Double.valueOf(salary);
+        Double bon = Double.valueOf(bonusAmount);
+
+        // Unboxing
+        empId = emp;
+        basicSalary = sal;
+        bonus = bon;
+    }
+
+    void calculateSalary() {
+
+        if (basicSalary < 0 || bonus < 0) {
+            System.out.println("Invalid Salary or Bonus");
+            return;
+        }
+
+        double netSalary = basicSalary + bonus;
+
+        System.out.println("Employee ID : " + empId);
+        System.out.println("Basic Salary : " + basicSalary);
+        System.out.println("Bonus : " + bonus);
+        System.out.println("Net Salary : " + netSalary);
+    }
+}
